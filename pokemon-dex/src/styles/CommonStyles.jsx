@@ -12,8 +12,8 @@ const flexColumn = css`
 
 export const Container = styled.div`
   ${flexColumn}
-  width: 100%;
-  height: 100vh;
+  width: ${(props) => props.width || "100%"};
+  height: ${(props) => props.height || "100vh"};
   margin: 0 auto;
 `;
 
@@ -38,5 +38,12 @@ export const Img = styled.img`
 
 export const Card = styled.div`
   ${flexColumn}
+  width: ${(props) => props.width || "200px"};
+  height: ${(props) => props.height || "250px"};
+  margin: 10px;
+  border-radius: 5px;
+  border-width: 2px;
+  border-style: ${(props) => props.borderStyle};
+  padding: 10px 5px;
   background-color: #ffffff;
 `;

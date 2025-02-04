@@ -7,7 +7,6 @@ const Dex = () => {
     <Container>
       <Dashboard />
       <PokemonList />
-      <div>현재 페이지 : Dex</div>
     </Container>
   );
 };
