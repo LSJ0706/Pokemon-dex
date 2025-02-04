@@ -43,7 +43,7 @@ export const Card = styled.div`
   margin: 10px;
   border-radius: 5px;
   border-width: 2px;
-  border-style: ${(props) => props.borderStyle};
+  border-style: ${(props) => props.borderstyle};
   padding: 10px 5px;
   background-color: #ffffff;
 `;
