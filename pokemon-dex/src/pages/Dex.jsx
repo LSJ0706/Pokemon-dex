@@ -1,7 +1,11 @@
 import { Container } from "../styles/CommonStyles";
 import Dashboard from "../components/Dashboard";
 import PokemonList from "../components/PokemonList";
-import { addPokemon, duplicateCheckPokemon } from "../utils/pokemon";
+import {
+  addPokemon,
+  duplicateCheckPokemon,
+  removePokemon,
+} from "../utils/pokemon";
 import { useState } from "react";
 
 const Dex = () => {
@@ -18,9 +22,14 @@ const Dex = () => {
     }
   };
 
+  const handleRemovePokemon = (pokemon) => {
+    setMyPokemons(removePokemon(myPokemons, pokemon.id));
+    alert(`바이 바이 ${pokemon.korean_name}!`);
+  };
+
   return (
     <Container>
-      <Dashboard myPokemons={myPokemons} />
+      <Dashboard myPokemons={myPokemons} removePokemon={handleRemovePokemon} />
       <PokemonList addPokemon={handleAddPokemon} />
     </Container>
   );

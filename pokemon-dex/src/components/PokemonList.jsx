@@ -13,7 +13,6 @@ const PokemonListDiv = styled.div`
   overflow: auto;
   background-color: #f6f6f6;
 `;
-console.log("PokemonList 리렌더링");
 const PokemonList = ({ addPokemon }) => {
   return (
     <PokemonListDiv>
@@ -23,7 +22,7 @@ const PokemonList = ({ addPokemon }) => {
             url={pokemon.img_url}
             name={pokemon.korean_name}
             id={pokemon.id}
-            addPokemon={() => addPokemon(pokemon)}
+            onClick={() => addPokemon(pokemon)}
             buttonName="잡기"
           />
         </div>

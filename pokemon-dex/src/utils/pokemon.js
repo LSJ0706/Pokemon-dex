@@ -6,4 +6,8 @@ const duplicateCheckPokemon = (myPokemons, id) => {
   return myPokemons.some((myPokemon) => myPokemon.id === id);
 };
 
-export { addPokemon, duplicateCheckPokemon };
+const removePokemon = (myPokemons, id) => {
+  return myPokemons.filter((pokemon) => pokemon.id !== id);
+};
+
+export { addPokemon, removePokemon, duplicateCheckPokemon };

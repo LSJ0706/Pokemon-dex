@@ -20,15 +20,19 @@ const H2 = styled.h2`
   margin: 10px 0px 10px 0px;
   color: red;
 `;
-const Dashboard = ({ myPokemons }) => {
-  console.log(myPokemons);
+const Dashboard = ({ myPokemons, removePokemon }) => {
   return (
     <DashboardDiv>
       <H2>나만의 포켓몬</H2>
       <DashboardList>
         {[...Array(6)].map((_, idx) =>
           !myPokemons[idx] ? (
-            <Card key={idx + 6} width="80px" height="70px" borderstyle="dotted">
+            <Card
+              key={"id" + idx}
+              width="80px"
+              height="70px"
+              borderstyle="dotted"
+            >
               <Img
                 src={pokeball}
                 alt="포켓볼 이미지"
@@ -44,6 +48,7 @@ const Dashboard = ({ myPokemons }) => {
               name={myPokemons[idx].korean_name}
               id={myPokemons[idx].id}
               buttonName="놓아주기"
+              onClick={() => removePokemon(myPokemons[idx])}
             />
           )
         )}
