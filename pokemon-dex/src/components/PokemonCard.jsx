@@ -5,13 +5,13 @@ const CardP = styled.p`
   margin: 0px 0px 5px 0px;
 `;
 
-const PokemonCard = ({ url, name, id }) => {
+const PokemonCard = ({ url, name, id, addPokemon, buttonName }) => {
   return (
     <Card>
       <Img src={url} width="150px" height="150px" />
       <CardP>{name}</CardP>
       <CardP>No. {id}</CardP>
-      <Button>추가</Button>
+      <Button onClick={addPokemon}>{buttonName}</Button>
     </Card>
   );
 };

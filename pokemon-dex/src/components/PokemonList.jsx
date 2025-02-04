@@ -13,8 +13,8 @@ const PokemonListDiv = styled.div`
   overflow: auto;
   background-color: #f6f6f6;
 `;
-
-const PokemonList = () => {
+console.log("PokemonList 리렌더링");
+const PokemonList = ({ addPokemon }) => {
   return (
     <PokemonListDiv>
       {MOCK_DATA.map((pokemon, idx) => (
@@ -23,6 +23,8 @@ const PokemonList = () => {
             url={pokemon.img_url}
             name={pokemon.korean_name}
             id={pokemon.id}
+            addPokemon={() => addPokemon(pokemon)}
+            buttonName="잡기"
           />
         </div>
       ))}

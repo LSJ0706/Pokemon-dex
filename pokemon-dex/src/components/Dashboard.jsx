@@ -1,31 +1,34 @@
-import { Card, Img, Container } from "../styles/CommonStyles";
+import { Card, Img } from "../styles/CommonStyles";
+import PokemonCard from "../components/PokemonCard";
 import pokeball from "../assets/pokeball.png";
 import styled from "styled-components";
 
-const MypokemonListDiv = styled.div`
+const DashboardDiv = styled.div`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  flex-direction: row;
+  flex-direction: column;
   width: 95%;
   min-width: 500px;
   background-color: #f6f6f6;
+`;
+const DashboardList = styled.div`
+  display: flex;
 `;
 
 const H2 = styled.h2`
   margin: 10px 0px 10px 0px;
   color: red;
 `;
-
-const Dashboard = () => {
-  const myPokemons = new Array(6).fill(null);
+const Dashboard = ({ myPokemons }) => {
+  console.log(myPokemons);
   return (
-    <Container height="40vh">
+    <DashboardDiv>
       <H2>나만의 포켓몬</H2>
-      <MypokemonListDiv>
-        {myPokemons.map((v, idx) =>
-          !v ? (
-            <Card key={idx} width="80px" height="70px" borderStyle="dotted">
+      <DashboardList>
+        {[...Array(6)].map((_, idx) =>
+          !myPokemons[idx] ? (
+            <Card key={idx + 6} width="80px" height="70px" borderstyle="dotted">
               <Img
                 src={pokeball}
                 alt="포켓볼 이미지"
@@ -35,11 +38,17 @@ const Dashboard = () => {
               />
             </Card>
           ) : (
-            <Card key={v.pokemon.id} width="150px" height="200px" />
+            <PokemonCard
+              key={myPokemons[idx].id}
+              url={myPokemons[idx].img_url}
+              name={myPokemons[idx].korean_name}
+              id={myPokemons[idx].id}
+              buttonName="놓아주기"
+            />
           )
         )}
-      </MypokemonListDiv>
-    </Container>
+      </DashboardList>
+    </DashboardDiv>
   );
 };
 
