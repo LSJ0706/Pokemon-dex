@@ -46,4 +46,7 @@ export const Card = styled.div`
   border-style: ${(props) => props.borderstyle};
   padding: 10px 5px;
   background-color: #ffffff;
+  &:hover {
+    cursor: pointer;
+  }
 `;

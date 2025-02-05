@@ -16,14 +16,14 @@ const Dex = () => {
       return alert("중복된 포켓몬은 잡을 수 없어!");
     }
     if (myPokemons.length < 6) {
-      setMyPokemons(addPokemon(myPokemons, pokemon));
+      setMyPokemons((prev) => addPokemon(prev, pokemon));
     } else {
       alert("포켓몬은 최대 6마리만 잡을 수 있어!");
     }
   };
 
   const handleRemovePokemon = (pokemon) => {
-    setMyPokemons(removePokemon(myPokemons, pokemon.id));
+    setMyPokemons((prev) => removePokemon(prev, pokemon.id));
     alert(`바이 바이 ${pokemon.korean_name}!`);
   };
 

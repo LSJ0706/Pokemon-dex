@@ -16,8 +16,8 @@ const PokemonListDiv = styled.div`
 const PokemonList = ({ addPokemon }) => {
   return (
     <PokemonListDiv>
-      {MOCK_DATA.map((pokemon, idx) => (
-        <div key={idx}>
+      {MOCK_DATA.map((pokemon) => (
+        <div key={pokemon.id}>
           <PokemonCard
             url={pokemon.img_url}
             name={pokemon.korean_name}
