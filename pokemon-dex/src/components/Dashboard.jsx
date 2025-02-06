@@ -1,5 +1,6 @@
 import { Card, Img } from "../styles/CommonStyles";
 import PokemonCard from "../components/PokemonCard";
+import usePokemon from "../hooks/usePokemon.js";
 import pokeball from "../assets/pokeball.png";
 import styled from "styled-components";
 
@@ -20,7 +21,8 @@ const H2 = styled.h2`
   margin: 10px 0px 10px 0px;
   color: red;
 `;
-const Dashboard = ({ myPokemons, removePokemon }) => {
+const Dashboard = () => {
+  const { myPokemons, handleRemovePokemon } = usePokemon();
   return (
     <DashboardDiv>
       <H2>나만의 포켓몬</H2>
@@ -48,7 +50,7 @@ const Dashboard = ({ myPokemons, removePokemon }) => {
               name={myPokemons[idx].korean_name}
               id={myPokemons[idx].id}
               buttonName="놓아주기"
-              onClick={() => removePokemon(myPokemons[idx])}
+              onClick={() => handleRemovePokemon(myPokemons[idx])}
             />
           )
         )}
