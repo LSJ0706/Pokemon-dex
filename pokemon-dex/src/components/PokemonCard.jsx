@@ -5,7 +5,7 @@ const CardP = styled.p`
   margin: 0px 0px 5px 0px;
 `;
 
-const PokemonCard = ({ url, name, id, onClick, buttonName }) => {
+const PokemonCard = ({ url, name, id, onClick, buttonName, cardWidth }) => {
   const navi = useNavigate();
   const handleGoToDetail = () => {
     navi(`/detail?id=${id}`);
@@ -15,7 +15,7 @@ const PokemonCard = ({ url, name, id, onClick, buttonName }) => {
     onClick();
   };
   return (
-    <Card onClick={handleGoToDetail}>
+    <Card width={cardWidth} onClick={handleGoToDetail}>
       <Img src={url} width="150px" height="150px" />
       <CardP>{name}</CardP>
       <CardP>No.{id}</CardP>

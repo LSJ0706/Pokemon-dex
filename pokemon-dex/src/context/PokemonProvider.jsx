@@ -5,8 +5,10 @@ import {
   removePokemon,
 } from "../utils/pokemon";
 export const PokemonContext = createContext();
+
 export const PokemonProvider = ({ children }) => {
   const [myPokemons, setMyPokemons] = useState([]);
+  console.log("PokemonProvider 재실행");
 
   const handleAddPokemon = (pokemon) => {
     if (duplicateCheckPokemon(myPokemons, pokemon.id)) {

@@ -1,11 +1,11 @@
 import { styled, css } from "styled-components";
 
-const flexCenter = css`
+export const flexCenter = css`
   display: flex;
   justify-content: center;
   align-items: center;
 `;
-const flexColumn = css`
+export const flexColumn = css`
   ${flexCenter}
   flex-direction: column;
 `;
@@ -13,7 +13,7 @@ const flexColumn = css`
 export const Container = styled.div`
   ${flexColumn}
   width: ${(props) => props.width || "100%"};
-  height: ${(props) => props.height || "100vh"};
+  height: auto;
   margin: 0 auto;
 `;
 
@@ -21,7 +21,8 @@ export const Button = styled.button`
   background-color: #c72828;
   color: white;
   border: none;
-  padding: 10px 20px;
+  font-size: 15px;
+  padding: 5px 10px;
   border-radius: 5px;
   cursor: pointer;
   &:hover {
@@ -32,7 +33,7 @@ export const Button = styled.button`
 export const Img = styled.img`
   src: ${(props) => props.url};
   width: ${(props) => props.width || "500px"};
-  height: ${(props) => props.width || "500px"};
+  height: ${(props) => props.height || "500px"};
   margin-bottom: 0px;
 `;
 
@@ -44,9 +45,13 @@ export const Card = styled.div`
   border-radius: 5px;
   border-width: 2px;
   border-style: ${(props) => props.borderstyle};
-  padding: 10px 5px;
+  padding: 5px 5px;
   background-color: #ffffff;
+  transition: transform 0.3s ease;
   &:hover {
     cursor: pointer;
+    transform: translateY(-0.5rem);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2),
+      -5px 0px 10px rgba(0, 0, 0, 0.1);
   }
 `;

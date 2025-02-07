@@ -1,20 +1,24 @@
-import { Card, Img } from "../styles/CommonStyles";
+import { Card, Img, flexColumn } from "../styles/CommonStyles";
 import PokemonCard from "../components/PokemonCard";
 import usePokemon from "../hooks/usePokemon.js";
 import pokeball from "../assets/pokeball.png";
-import styled from "styled-components";
+import { styled } from "styled-components";
 
 const DashboardDiv = styled.div`
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  flex-direction: column;
+  ${flexColumn}
   width: 95%;
-  min-width: 500px;
-  background-color: #f6f6f6;
 `;
 const DashboardList = styled.div`
   display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  min-width: 600px;
+  margin-bottom: 20px;
+  height: 250px;
+  padding: 20px 0;
+  background-color: #f6f6f6;
 `;
 
 const H2 = styled.h2`
@@ -31,15 +35,15 @@ const Dashboard = () => {
           !myPokemons[idx] ? (
             <Card
               key={"id" + idx}
-              width="80px"
-              height="70px"
+              width="150px"
+              height="150px"
               borderstyle="dotted"
             >
               <Img
                 src={pokeball}
                 alt="포켓볼 이미지"
-                width="50px"
-                height="50px"
+                width="100px"
+                height="100px"
                 key={idx}
               />
             </Card>
@@ -49,6 +53,7 @@ const Dashboard = () => {
               url={myPokemons[idx].img_url}
               name={myPokemons[idx].korean_name}
               id={myPokemons[idx].id}
+              cardWidth="150px"
               buttonName="놓아주기"
               onClick={() => handleRemovePokemon(myPokemons[idx])}
             />
