@@ -29,10 +29,10 @@ const H2 = styled.h2`
 const Dashboard = () => {
   const myPokemons = useSelector((state) => state.pokemon.myPokemons);
   const dispatch = useDispatch();
+
   const handleRemovePokemon = (pokemon) => {
     dispatch(removePokemonAction(pokemon));
   };
-
   return (
     <DashboardDiv>
       <H2>나만의 포켓몬</H2>

@@ -17,12 +17,12 @@ const PokemonListDiv = styled.div`
 `;
 const PokemonList = () => {
   const dispatch = useDispatch();
-  console.log("PokemonList 렌더링 중!");
 
   const handleAddPokemon = (pokemon) => {
     dispatch(addPokemonAction(pokemon));
   };
 
+  console.log("렌더링!");
   return (
     <PokemonListDiv>
       {MOCK_DATA.map((pokemon) => (
