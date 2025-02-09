@@ -1,8 +1,9 @@
 import { Card, Img, flexColumn } from "../styles/CommonStyles";
 import PokemonCard from "../components/PokemonCard";
-import usePokemon from "../hooks/usePokemon.js";
 import pokeball from "../assets/pokeball.png";
 import { styled } from "styled-components";
+import { useDispatch, useSelector } from "react-redux";
+import { removePokemonAction } from "../redux/modules/pokemonSlice";
 
 const DashboardDiv = styled.div`
   ${flexColumn}
@@ -26,7 +27,12 @@ const H2 = styled.h2`
   color: red;
 `;
 const Dashboard = () => {
-  const { myPokemons, handleRemovePokemon } = usePokemon();
+  const myPokemons = useSelector((state) => state.pokemon.myPokemons);
+  const dispatch = useDispatch();
+  const handleRemovePokemon = (pokemon) => {
+    dispatch(removePokemonAction(pokemon));
+  };
+
   return (
     <DashboardDiv>
       <H2>나만의 포켓몬</H2>

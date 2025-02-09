@@ -1,8 +1,8 @@
-import usePokemon from "../hooks/usePokemon.js";
 import styled from "styled-components";
 import MOCK_DATA from "../constants/MockData";
 import PokemonCard from "./PokemonCard";
-import React from "react";
+import { useDispatch } from "react-redux";
+import { addPokemonAction } from "../redux/modules/pokemonSlice";
 
 const PokemonListDiv = styled.div`
   display: grid;
@@ -16,8 +16,13 @@ const PokemonListDiv = styled.div`
   background-color: #f6f6f6;
 `;
 const PokemonList = () => {
-  const { handleAddPokemon } = usePokemon();
+  const dispatch = useDispatch();
   console.log("PokemonList 렌더링 중!");
+
+  const handleAddPokemon = (pokemon) => {
+    dispatch(addPokemonAction(pokemon));
+  };
+
   return (
     <PokemonListDiv>
       {MOCK_DATA.map((pokemon) => (
@@ -34,4 +39,4 @@ const PokemonList = () => {
   );
 };
 
-export default React.memo(PokemonList);
+export default PokemonList;
