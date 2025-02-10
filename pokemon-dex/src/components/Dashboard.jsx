@@ -32,7 +32,6 @@ const Dashboard = () => {
   const handleRemovePokemon = (pokemon) => {
     dispatch(removePokemonAction(pokemon));
   };
-  console.log(myPokemons);
   return (
     <DashboardDiv>
       <H2>나만의 포켓몬</H2>
