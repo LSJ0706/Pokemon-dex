@@ -1,5 +1,5 @@
 import { toast } from "react-toastify";
-export const toastAlert = (message) => {
+export const toastAlert = ({ message }) => {
   return toast.success(`${message}`, {
     position: "top-right",
     autoClose: 1000,
