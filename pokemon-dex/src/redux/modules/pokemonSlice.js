@@ -15,7 +15,8 @@ const pokemonSlice = createSlice({
   reducers: {
     addPokemonAction: (state, action) => {
       if (duplicateCheckPokemon(state.myPokemons, action.payload.id)) {
-        return toastAlret("중복된 포켓몬은 잡을 수 없어!");
+        toastAlret("중복된 포켓몬은 잡을 수 없어!");
+        return { ...state };
       }
       if (state.myPokemons.length < 6) {
         state.myPokemons = addPokemon(state.myPokemons, action.payload);
