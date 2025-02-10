@@ -1,11 +1,24 @@
 import { toast } from "react-toastify";
-export const toastAlert = ({ message }) => {
-  return toast.success(`${message}`, {
-    position: "top-right",
-    autoClose: 1000,
-    hideProgressBar: true,
-    closeOnClick: true,
-    draggable: true,
-    theme: "light",
-  });
+
+const defaultOptions = {
+  position: "top-right",
+  autoClose: 1000,
+  hideProgressBar: true,
+  closeOnClick: true,
+  pauseOnHover: false,
+  draggable: false,
+  theme: "light",
+};
+export const toastAlert = (message, type) => {
+  switch (type) {
+    case "error":
+      return toast.error(message, defaultOptions);
+    case "success":
+      return toast.success(message, defaultOptions);
+    case "warn":
+      return toast.warn(message, defaultOptions);
+    default:
+      console.log("defalut");
+      return;
+  }
 };
