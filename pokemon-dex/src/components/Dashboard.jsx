@@ -19,13 +19,12 @@ const DashboardList = styled.div`
   margin-bottom: 20px;
   height: 250px;
   padding: 20px 0;
-  background-color: #f6f6f6;
 `;
-
 const H2 = styled.h2`
   margin: 10px 0px 10px 0px;
   color: red;
 `;
+
 const Dashboard = () => {
   const myPokemons = useSelector((state) => state.pokemon.myPokemons);
   const dispatch = useDispatch();
@@ -39,12 +38,7 @@ const Dashboard = () => {
       <DashboardList>
         {[...Array(6)].map((_, idx) =>
           !myPokemons[idx] ? (
-            <Card
-              key={"id" + idx}
-              width="150px"
-              height="150px"
-              borderstyle="dotted"
-            >
+            <Card key={"id" + idx} width="150px" height="150px">
               <Img
                 src={pokeball}
                 alt="포켓볼 이미지"
@@ -59,7 +53,6 @@ const Dashboard = () => {
               url={myPokemons[idx].img_url}
               name={myPokemons[idx].korean_name}
               id={myPokemons[idx].id}
-              cardWidth="150px"
               buttonName="놓아주기"
               onClick={() => handleRemovePokemon(myPokemons[idx])}
             />

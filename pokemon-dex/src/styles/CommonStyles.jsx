@@ -10,6 +10,11 @@ export const flexColumn = css`
   flex-direction: column;
 `;
 
+export const flexRow = css`
+  ${flexCenter}
+  flex-direction: row;
+`;
+
 export const Container = styled.div`
   ${flexColumn}
   width: ${(props) => props.width || "100%"};
@@ -22,6 +27,7 @@ export const Button = styled.button`
   color: white;
   border: none;
   font-size: 15px;
+  margin: 10px 0px 10px 0px;
   padding: 5px 10px;
   border-radius: 5px;
   cursor: pointer;
@@ -39,12 +45,11 @@ export const Img = styled.img`
 
 export const Card = styled.div`
   ${flexColumn}
-  width: ${(props) => props.width || "200px"};
+  width: ${(props) => props.width || "170px"};
   height: ${(props) => props.height || "250px"};
   margin: 10px;
   border-radius: 5px;
-  border-width: 2px;
-  border-style: ${(props) => props.borderstyle};
+  border-width: 1px;
   padding: 5px 5px;
   background-color: #ffffff;
   transition: transform 0.3s ease;

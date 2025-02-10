@@ -13,7 +13,6 @@ const PokemonListDiv = styled.div`
   gap: 1rem;
   place-items: center;
   padding: 20px 10px 0 10px;
-  background-color: #f6f6f6;
 `;
 const PokemonList = () => {
   const dispatch = useDispatch();
@@ -22,7 +21,6 @@ const PokemonList = () => {
     dispatch(addPokemonAction(pokemon));
   };
 
-  console.log("렌더링!");
   return (
     <PokemonListDiv>
       {MOCK_DATA.map((pokemon) => (
