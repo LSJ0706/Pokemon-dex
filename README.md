@@ -27,3 +27,6 @@ local 환경
 - yarn
 - yarn dev
 위 순서로 명령어 입력
+
+vercel 배포 주소
+pokemon-dex-pied.vercel.app
