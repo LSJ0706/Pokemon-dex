@@ -6,7 +6,7 @@ const Router = () => {
   return (
     <BrowserRouter>
       <Routes>
-        {/*Route*/}
+        {/*Route 설정*/}
         <Route path="/" element={<Home />} />
         <Route path="/Dex" element={<Dex />} />
         <Route path="/detail" element={<Detail />} />

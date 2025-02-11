@@ -1,15 +1,23 @@
 import { styled, css } from "styled-components";
 
+{
+  /*flex 가운데 정렬 설정*/
+}
 export const flexCenter = css`
   display: flex;
   justify-content: center;
   align-items: center;
 `;
+{
+  /*flex 가운데 정렬 + 세로 정렬*/
+}
 export const flexColumn = css`
   ${flexCenter}
   flex-direction: column;
 `;
-
+{
+  /*flex 가운데 정렬 설정 + 가로 정렬*/
+}
 export const flexRow = css`
   ${flexCenter}
   flex-direction: row;
