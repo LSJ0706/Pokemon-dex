@@ -4,6 +4,7 @@ import { ToastContainer } from "react-toastify";
 function App() {
   return (
     <>
+      {/*GlobalStyle, Router, Toastify 적용*/}
       <GlobalStyles />
       <Router />
       <ToastContainer />

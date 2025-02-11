@@ -17,12 +17,15 @@ const PokemonListDiv = styled.div`
 const PokemonList = () => {
   const dispatch = useDispatch();
 
+  // 포켓몬 추가 핸들러
   const handleAddPokemon = (pokemon) => {
+    // dispatch로 포켓몬 추가 action 실행
     dispatch(addPokemonAction(pokemon));
   };
 
   return (
     <PokemonListDiv>
+      {/*MOCK_DATA를 map 돌려 Card형식으로 List 구현*/}
       {MOCK_DATA.map((pokemon) => (
         <PokemonCard
           key={pokemon.id}

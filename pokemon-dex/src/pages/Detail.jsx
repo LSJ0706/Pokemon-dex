@@ -18,14 +18,15 @@ const DetailCotentDiv = styled.div`
 `;
 
 const Detail = () => {
+  // url의 param값을 pokemon의 id로 사용하여 데이터 불러오기
   const [searchPrams] = useSearchParams();
   const id = searchPrams.get("id");
   const navi = useNavigate();
   const details = MOCK_DATA.filter((pokemon) => pokemon.id === Number(id));
 
+  // redux의 dispatch를 사용하여 추가버튼 설정
   const dispatch = useDispatch();
   const handleAddPokemon = (event, pokemon) => {
-    event.stopPropagation();
     dispatch(addPokemonAction(pokemon));
   };
 
